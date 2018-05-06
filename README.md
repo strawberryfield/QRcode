@@ -1,2 +1,4 @@
 # QRcode
-QRcode Generator
+## QRcode Generator
+
+This documentation is a work in progress.
