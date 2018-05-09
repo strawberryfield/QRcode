@@ -121,8 +121,15 @@ namespace Casasoft.QRcode
         {
             refreshData();
         }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+            refreshData();
+        }
+
         #endregion
 
+        #region save/copy
         private void btnSave_Click(object sender, EventArgs e)
         {
             saveFileDialog.ShowDialog();
@@ -163,5 +170,6 @@ namespace Casasoft.QRcode
             else
                 Clipboard.SetText(textBox.Text);
         }
+        #endregion
     }
 }
