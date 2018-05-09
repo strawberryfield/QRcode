@@ -12,12 +12,60 @@ namespace Casasoft.QRcode
         protected QRCodeGenerator qrGenerator;
         protected QRCodeData qrCodeData;
 
+        #region public properties
+        public int ElementSize
+        {
+            get => Convert.ToInt16(txtSize.Value);
+            set => txtSize.Value = Convert.ToDecimal(value);
+        }
+
+        public System.Drawing.Color QRForeColor
+        {
+            get => txtForeColor.BackColor;
+            set => txtForeColor.BackColor = value;
+        }
+
+        public System.Drawing.Color QRBackColor
+        {
+            get => txtBackColor.BackColor;
+            set => txtBackColor.BackColor = value;
+        }
+
+        public bool AddBorder
+        {
+            get => chkBorder.Checked;
+            set => chkBorder.Checked = value;
+        }
+
+        private string eccCodes = "LMQH";
+        public char ErrorCorrectionLevel
+        {
+            get => eccCodes[cmbECC.SelectedIndex];
+            set
+            {
+                int level = eccCodes.IndexOf(value);
+                if (level > 0)
+                    cmbECC.SelectedIndex = level;
+                else
+                    throw new ArgumentException("ECC correction level invalid", value.ToString());
+            }
+        }
+
+        public string Payload
+        {
+            get => textBox.Text;
+            set => textBox.Text = value;
+        }
+        #endregion
+
         public GeneratorForm()
         {
             InitializeComponent();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
-            cmbECC.SelectedIndex = 2;
+
+            ErrorCorrectionLevel = 'Q';
             saveFileDialog.Filter = "Jpeg image|*.jpg;*.jpeg|Bitmap image|*.bmp|PNG image|*.png|GIF image|*.gif|TIFF image|*.tif;*.tiff";
+
             qrGenerator = new QRCodeGenerator();
             refreshData();
         }
