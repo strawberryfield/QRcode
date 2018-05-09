@@ -32,6 +32,8 @@
             this.btnAbout = new System.Windows.Forms.Button();
             this.tcResult = new System.Windows.Forms.TabControl();
             this.tabImage = new System.Windows.Forms.TabPage();
+            this.lblECC = new System.Windows.Forms.Label();
+            this.cmbECC = new System.Windows.Forms.ComboBox();
             this.txtSize = new System.Windows.Forms.NumericUpDown();
             this.chkBorder = new System.Windows.Forms.CheckBox();
             this.lblSize = new System.Windows.Forms.Label();
@@ -65,8 +67,7 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.btnSave = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.cmbECC = new System.Windows.Forms.ComboBox();
-            this.lblECC = new System.Windows.Forms.Label();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.tcResult.SuspendLayout();
             this.tabImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
@@ -122,6 +123,29 @@
             this.tabImage.TabIndex = 0;
             this.tabImage.Text = "Image";
             this.tabImage.UseVisualStyleBackColor = true;
+            // 
+            // lblECC
+            // 
+            this.lblECC.AutoSize = true;
+            this.lblECC.Location = new System.Drawing.Point(6, 162);
+            this.lblECC.Name = "lblECC";
+            this.lblECC.Size = new System.Drawing.Size(104, 13);
+            this.lblECC.TabIndex = 12;
+            this.lblECC.Text = "Error correction level";
+            // 
+            // cmbECC
+            // 
+            this.cmbECC.FormattingEnabled = true;
+            this.cmbECC.Items.AddRange(new object[] {
+            "L  (7%)",
+            "M  (15%)",
+            "Q  (25%)",
+            "H  (30%)"});
+            this.cmbECC.Location = new System.Drawing.Point(9, 178);
+            this.cmbECC.Name = "cmbECC";
+            this.cmbECC.Size = new System.Drawing.Size(110, 21);
+            this.cmbECC.TabIndex = 11;
+            this.cmbECC.SelectedIndexChanged += new System.EventHandler(this.cmbECC_SelectedIndexChanged);
             // 
             // txtSize
             // 
@@ -444,7 +468,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(298, 504);
+            this.btnSave.Location = new System.Drawing.Point(307, 504);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(111, 23);
             this.btnSave.TabIndex = 3;
@@ -456,32 +480,21 @@
             // 
             this.saveFileDialog.Title = "Save Image";
             // 
-            // cmbECC
+            // btnCopy
             // 
-            this.cmbECC.FormattingEnabled = true;
-            this.cmbECC.Items.AddRange(new object[] {
-            "L  (7%)",
-            "M  (15%)",
-            "Q  (25%)",
-            "H  (30%)"});
-            this.cmbECC.Location = new System.Drawing.Point(9, 178);
-            this.cmbECC.Name = "cmbECC";
-            this.cmbECC.Size = new System.Drawing.Size(110, 21);
-            this.cmbECC.TabIndex = 11;
-            this.cmbECC.SelectedIndexChanged += new System.EventHandler(this.cmbECC_SelectedIndexChanged);
-            // 
-            // lblECC
-            // 
-            this.lblECC.AutoSize = true;
-            this.lblECC.Location = new System.Drawing.Point(6, 162);
-            this.lblECC.Name = "lblECC";
-            this.lblECC.Size = new System.Drawing.Size(104, 13);
-            this.lblECC.TabIndex = 12;
-            this.lblECC.Text = "Error correction level";
+            this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCopy.Location = new System.Drawing.Point(190, 504);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(111, 23);
+            this.btnCopy.TabIndex = 4;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // GeneratorForm
             // 
             this.ClientSize = new System.Drawing.Size(547, 539);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tcInput);
@@ -546,6 +559,7 @@
         private System.Windows.Forms.NumericUpDown txtSize;
         private System.Windows.Forms.Label lblECC;
         private System.Windows.Forms.ComboBox cmbECC;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
 

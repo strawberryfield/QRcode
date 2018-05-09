@@ -156,5 +156,12 @@ namespace Casasoft.QRcode
             }
         }
 
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (tcResult.SelectedTab == tcResult.TabPages["tabImage"])
+                Clipboard.SetImage(pictureBox1.Image);
+            else
+                Clipboard.SetText(textBox.Text);
+        }
     }
 }
