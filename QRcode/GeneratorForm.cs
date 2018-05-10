@@ -63,7 +63,14 @@ namespace Casasoft.QRcode
             InitializeComponent();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
 
+            // Default values
             ErrorCorrectionLevel = 'Q';
+            QRForeColor = System.Drawing.Color.Black;
+            QRBackColor = System.Drawing.Color.White;
+            ElementSize = 20;
+            AddBorder = true;
+            Payload = "";
+
             saveFileDialog.Filter = "Jpeg image|*.jpg;*.jpeg|Bitmap image|*.bmp|PNG image|*.png|GIF image|*.gif|TIFF image|*.tif;*.tiff";
 
             qrGenerator = new QRCodeGenerator();
