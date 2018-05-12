@@ -96,7 +96,10 @@ namespace Casasoft.QRcode
             else if (tcInput.SelectedTab == tcInput.TabPages["tabEvent"])
             {
                 CalendarEvent ce = new CalendarEvent(txtEvent_Name.Text, txtEvent_Description.Text,
-                    txtEvent_Location.Text, dtpEvent_Start.Value, dtpEvent_End.Value, chkEvent_AllDay.Checked);
+                    txtEvent_Location.Text,
+                    dtpEvent_Start.Value.Date + dtpEvent_StartTime.Value.TimeOfDay,
+                    dtpEvent_End.Value.Date + dtpEvent_EndTime.Value.TimeOfDay,
+                    chkEvent_AllDay.Checked);
                 textBox.Text = ce.ToString();
             }
 
@@ -224,6 +227,18 @@ namespace Casasoft.QRcode
                 Clipboard.SetImage(pictureBox1.Image);
             else
                 Clipboard.SetText(textBox.Text);
+        }
+        #endregion
+
+        #region event tab triggers
+        private void dtpEvent_Start_ValueChanged(object sender, EventArgs e)
+        {
+            dtpEvent_End.Value = dtpEvent_Start.Value.Date;
+        }
+
+        private void dtpEvent_StartTime_ValueChanged(object sender, EventArgs e)
+        {
+            dtpEvent_EndTime.Value = dtpEvent_StartTime.Value.AddHours(2);
         }
         #endregion
     }

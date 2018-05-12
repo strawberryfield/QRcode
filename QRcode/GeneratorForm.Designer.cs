@@ -68,6 +68,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnCopy = new System.Windows.Forms.Button();
+            this.dtpEvent_StartTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpEvent_EndTime = new System.Windows.Forms.DateTimePicker();
             this.tcResult.SuspendLayout();
             this.tabImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
@@ -333,6 +335,8 @@
             // 
             // tabEvent
             // 
+            this.tabEvent.Controls.Add(this.dtpEvent_EndTime);
+            this.tabEvent.Controls.Add(this.dtpEvent_StartTime);
             this.tabEvent.Controls.Add(this.chkEvent_AllDay);
             this.tabEvent.Controls.Add(this.lblEvent_Location);
             this.tabEvent.Controls.Add(this.txtEvent_Location);
@@ -355,7 +359,7 @@
             // chkEvent_AllDay
             // 
             this.chkEvent_AllDay.AutoSize = true;
-            this.chkEvent_AllDay.Location = new System.Drawing.Point(392, 174);
+            this.chkEvent_AllDay.Location = new System.Drawing.Point(418, 174);
             this.chkEvent_AllDay.Name = "chkEvent_AllDay";
             this.chkEvent_AllDay.Size = new System.Drawing.Size(87, 17);
             this.chkEvent_AllDay.TabIndex = 10;
@@ -430,11 +434,11 @@
             // 
             // dtpEvent_End
             // 
-            this.dtpEvent_End.CustomFormat = "dd MMM yyyy   hh:mm:ss";
+            this.dtpEvent_End.CustomFormat = "dd MMM yyyy";
             this.dtpEvent_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEvent_End.Location = new System.Drawing.Point(203, 172);
             this.dtpEvent_End.Name = "dtpEvent_End";
-            this.dtpEvent_End.Size = new System.Drawing.Size(166, 20);
+            this.dtpEvent_End.Size = new System.Drawing.Size(110, 20);
             this.dtpEvent_End.TabIndex = 2;
             // 
             // lblEvent_Start
@@ -448,12 +452,13 @@
             // 
             // dtpEvent_Start
             // 
-            this.dtpEvent_Start.CustomFormat = "dd MMM yyyy   hh:mm:ss";
+            this.dtpEvent_Start.CustomFormat = "dd MMM yyyy";
             this.dtpEvent_Start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEvent_Start.Location = new System.Drawing.Point(9, 172);
             this.dtpEvent_Start.Name = "dtpEvent_Start";
-            this.dtpEvent_Start.Size = new System.Drawing.Size(166, 20);
+            this.dtpEvent_Start.Size = new System.Drawing.Size(110, 20);
             this.dtpEvent_Start.TabIndex = 0;
+            this.dtpEvent_Start.ValueChanged += new System.EventHandler(this.dtpEvent_Start_ValueChanged);
             // 
             // btnUpdate
             // 
@@ -491,6 +496,27 @@
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // dtpEvent_StartTime
+            // 
+            this.dtpEvent_StartTime.CustomFormat = "HH:mm";
+            this.dtpEvent_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEvent_StartTime.Location = new System.Drawing.Point(125, 172);
+            this.dtpEvent_StartTime.Name = "dtpEvent_StartTime";
+            this.dtpEvent_StartTime.ShowUpDown = true;
+            this.dtpEvent_StartTime.Size = new System.Drawing.Size(59, 20);
+            this.dtpEvent_StartTime.TabIndex = 11;
+            this.dtpEvent_StartTime.ValueChanged += new System.EventHandler(this.dtpEvent_StartTime_ValueChanged);
+            // 
+            // dtpEvent_EndTime
+            // 
+            this.dtpEvent_EndTime.CustomFormat = "HH:mm";
+            this.dtpEvent_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEvent_EndTime.Location = new System.Drawing.Point(319, 172);
+            this.dtpEvent_EndTime.Name = "dtpEvent_EndTime";
+            this.dtpEvent_EndTime.ShowUpDown = true;
+            this.dtpEvent_EndTime.Size = new System.Drawing.Size(59, 20);
+            this.dtpEvent_EndTime.TabIndex = 12;
             // 
             // GeneratorForm
             // 
@@ -561,6 +587,8 @@
         private System.Windows.Forms.Label lblECC;
         private System.Windows.Forms.ComboBox cmbECC;
         private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.DateTimePicker dtpEvent_EndTime;
+        private System.Windows.Forms.DateTimePicker dtpEvent_StartTime;
     }
 }
 
