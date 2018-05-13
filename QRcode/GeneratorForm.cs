@@ -91,7 +91,17 @@ namespace Casasoft.QRcode
             }
             else if (tcInput.SelectedTab == tcInput.TabPages["tabContact"])
             {
-
+                ContactData cd = new ContactData(ContactData.ContactOutputType.VCard3,
+                    txtContact_Firstname.Text, txtContact_Lastname.Text,
+                    txtContact_Nick.Text,
+                    txtContact_Phone.Text, txtContact_MobilePhone.Text, txtContact_WorkPhone.Text,
+                    txtContact_Mail.Text,
+                    (dtpContact_BirthDate.CustomFormat.Trim() != "" ? dtpContact_BirthDate.Value.Date : (DateTime?)null),
+                    txtContact_Web.Text,
+                    txtContact_Address.Text, txtContact_Number.Text,
+                    txtContact_City.Text, txtContact_Zip.Text, txtContact_State.Text,
+                    txtContact_Note.Text);
+                textBox.Text = cd.ToString();
             }
             else if (tcInput.SelectedTab == tcInput.TabPages["tabEvent"])
             {
@@ -239,6 +249,18 @@ namespace Casasoft.QRcode
         private void dtpEvent_StartTime_ValueChanged(object sender, EventArgs e)
         {
             dtpEvent_EndTime.Value = dtpEvent_StartTime.Value.AddHours(2);
+        }
+        #endregion
+
+        #region contact tab triggers
+        private void dtpContact_BirthDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpContact_BirthDate.CustomFormat = "dd MMM yyyy";
+        }
+
+        private void btnContact_BirthDateClear_Click(object sender, EventArgs e)
+        {
+            dtpContact_BirthDate.CustomFormat = " ";
         }
         #endregion
     }
