@@ -71,7 +71,7 @@ namespace Casasoft.QRcode
             AddBorder = true;
             Payload = "";
 
-            saveFileDialog.Filter = "Jpeg image|*.jpg;*.jpeg|Bitmap image|*.bmp|PNG image|*.png|GIF image|*.gif|TIFF image|*.tif;*.tiff";
+            saveFileDialog.Filter = "Jpeg image|*.jpg;*.jpeg|Bitmap image|*.bmp|PNG image|*.png|GIF image|*.gif|TIFF image|*.tif;*.tiff|SVG image|*.svg";
 
             qrGenerator = new QRCodeGenerator();
             refreshData();
@@ -211,31 +211,47 @@ namespace Casasoft.QRcode
             saveFileDialog.ShowDialog();
             if(saveFileDialog.FileName != "")
             {
-                FileStream fs = (FileStream)saveFileDialog.OpenFile();
-                switch (saveFileDialog.FilterIndex)
+                if (saveFileDialog.FilterIndex <= 5)
                 {
-                    case 1:
-                        pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        break;
 
-                    case 2:
-                        pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Bmp);
-                        break;
 
-                    case 3:
-                        pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
-                        break;
+                    FileStream fs = (FileStream)saveFileDialog.OpenFile();
+                    switch (saveFileDialog.FilterIndex)
+                    {
+                        case 1:
+                            pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            break;
 
-                    case 4:
-                        pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Gif);
-                        break;
+                        case 2:
+                            pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Bmp);
+                            break;
 
-                    case 5:
-                        pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Tiff);
-                        break;
+                        case 3:
+                            pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
+                            break;
+
+                        case 4:
+                            pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Gif);
+                            break;
+
+                        case 5:
+                            pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Tiff);
+                            break;
+                    }
+
+                    fs.Close();
                 }
-
-                fs.Close();
+                else
+                {
+                    switch (saveFileDialog.FilterIndex)
+                    {
+                         case 6:
+                            SvgQRCode qrCode = new SvgQRCode(qrCodeData);
+                            string qrCodeAsSvg = qrCode.GetGraphic(20);
+                            File.WriteAllText(saveFileDialog.FileName, qrCodeAsSvg);
+                            break;
+                    }
+                }
             }
         }
 
