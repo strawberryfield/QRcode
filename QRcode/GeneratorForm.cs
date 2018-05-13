@@ -91,7 +91,15 @@ namespace Casasoft.QRcode
             }
             else if (tcInput.SelectedTab == tcInput.TabPages["tabContact"])
             {
-                ContactData cd = new ContactData(ContactData.ContactOutputType.VCard3,
+                ContactData.ContactOutputType outType = ContactData.ContactOutputType.VCard3;
+                if (rbContact1.Checked)
+                    outType = ContactData.ContactOutputType.VCard21;
+                if (rbContact3.Checked)
+                    outType = ContactData.ContactOutputType.VCard4;
+                if (rbContact4.Checked)
+                    outType = ContactData.ContactOutputType.MeCard;
+
+                ContactData cd = new ContactData(outType,
                     txtContact_Firstname.Text, txtContact_Lastname.Text,
                     txtContact_Nick.Text,
                     txtContact_Phone.Text, txtContact_MobilePhone.Text, txtContact_WorkPhone.Text,

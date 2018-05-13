@@ -107,6 +107,10 @@
             this.btnContact_BirthDateClear = new System.Windows.Forms.Button();
             this.lblContact_Nick = new System.Windows.Forms.Label();
             this.txtContact_Nick = new System.Windows.Forms.TextBox();
+            this.rbContact1 = new System.Windows.Forms.RadioButton();
+            this.rbContact2 = new System.Windows.Forms.RadioButton();
+            this.rbContact3 = new System.Windows.Forms.RadioButton();
+            this.rbContact4 = new System.Windows.Forms.RadioButton();
             this.tcResult.SuspendLayout();
             this.tabImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
@@ -120,6 +124,7 @@
             this.tabContact_Address.SuspendLayout();
             this.tabContact_Mail.SuspendLayout();
             this.tabContact_Other.SuspendLayout();
+            this.tabContact_Options.SuspendLayout();
             this.tabEvent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -723,6 +728,10 @@
             // 
             // tabContact_Options
             // 
+            this.tabContact_Options.Controls.Add(this.rbContact4);
+            this.tabContact_Options.Controls.Add(this.rbContact3);
+            this.tabContact_Options.Controls.Add(this.rbContact2);
+            this.tabContact_Options.Controls.Add(this.rbContact1);
             this.tabContact_Options.Location = new System.Drawing.Point(4, 4);
             this.tabContact_Options.Name = "tabContact_Options";
             this.tabContact_Options.Size = new System.Drawing.Size(500, 122);
@@ -944,6 +953,48 @@
             this.txtContact_Nick.Size = new System.Drawing.Size(488, 20);
             this.txtContact_Nick.TabIndex = 23;
             // 
+            // rbContact1
+            // 
+            this.rbContact1.AutoSize = true;
+            this.rbContact1.Location = new System.Drawing.Point(5, 3);
+            this.rbContact1.Name = "rbContact1";
+            this.rbContact1.Size = new System.Drawing.Size(71, 17);
+            this.rbContact1.TabIndex = 0;
+            this.rbContact1.Text = "vCard 2.1";
+            this.rbContact1.UseVisualStyleBackColor = true;
+            // 
+            // rbContact2
+            // 
+            this.rbContact2.AutoSize = true;
+            this.rbContact2.Checked = true;
+            this.rbContact2.Location = new System.Drawing.Point(5, 26);
+            this.rbContact2.Name = "rbContact2";
+            this.rbContact2.Size = new System.Drawing.Size(71, 17);
+            this.rbContact2.TabIndex = 1;
+            this.rbContact2.TabStop = true;
+            this.rbContact2.Text = "vCard 3.0";
+            this.rbContact2.UseVisualStyleBackColor = true;
+            // 
+            // rbContact3
+            // 
+            this.rbContact3.AutoSize = true;
+            this.rbContact3.Location = new System.Drawing.Point(5, 49);
+            this.rbContact3.Name = "rbContact3";
+            this.rbContact3.Size = new System.Drawing.Size(71, 17);
+            this.rbContact3.TabIndex = 2;
+            this.rbContact3.Text = "vCard 4.0";
+            this.rbContact3.UseVisualStyleBackColor = true;
+            // 
+            // rbContact4
+            // 
+            this.rbContact4.AutoSize = true;
+            this.rbContact4.Location = new System.Drawing.Point(5, 72);
+            this.rbContact4.Name = "rbContact4";
+            this.rbContact4.Size = new System.Drawing.Size(62, 17);
+            this.rbContact4.TabIndex = 3;
+            this.rbContact4.Text = "MeCard";
+            this.rbContact4.UseVisualStyleBackColor = true;
+            // 
             // GeneratorForm
             // 
             this.ClientSize = new System.Drawing.Size(547, 539);
@@ -976,6 +1027,8 @@
             this.tabContact_Mail.PerformLayout();
             this.tabContact_Other.ResumeLayout(false);
             this.tabContact_Other.PerformLayout();
+            this.tabContact_Options.ResumeLayout(false);
+            this.tabContact_Options.PerformLayout();
             this.tabEvent.ResumeLayout(false);
             this.tabEvent.PerformLayout();
             this.ResumeLayout(false);
@@ -1063,6 +1116,10 @@
         private System.Windows.Forms.Button btnContact_BirthDateClear;
         private System.Windows.Forms.Label lblContact_Nick;
         private System.Windows.Forms.TextBox txtContact_Nick;
+        private System.Windows.Forms.RadioButton rbContact4;
+        private System.Windows.Forms.RadioButton rbContact3;
+        private System.Windows.Forms.RadioButton rbContact2;
+        private System.Windows.Forms.RadioButton rbContact1;
     }
 }
 
