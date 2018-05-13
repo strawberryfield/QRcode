@@ -51,7 +51,21 @@
             this.lblURL_url = new System.Windows.Forms.Label();
             this.txtURL_url = new System.Windows.Forms.TextBox();
             this.tabContact = new System.Windows.Forms.TabPage();
+            this.lblContact_Lastname = new System.Windows.Forms.Label();
+            this.lblContact_Firstname = new System.Windows.Forms.Label();
+            this.txtContact_Lastname = new System.Windows.Forms.TextBox();
+            this.txtContact_Firstname = new System.Windows.Forms.TextBox();
+            this.tcContact = new System.Windows.Forms.TabControl();
+            this.tabContact_Phones = new System.Windows.Forms.TabPage();
+            this.lblContact_Phone = new System.Windows.Forms.Label();
+            this.txtContact_Phone = new System.Windows.Forms.TextBox();
+            this.tabContact_Address = new System.Windows.Forms.TabPage();
+            this.tabContact_Mail = new System.Windows.Forms.TabPage();
+            this.tabContact_Other = new System.Windows.Forms.TabPage();
+            this.tabContact_Options = new System.Windows.Forms.TabPage();
             this.tabEvent = new System.Windows.Forms.TabPage();
+            this.dtpEvent_EndTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpEvent_StartTime = new System.Windows.Forms.DateTimePicker();
             this.chkEvent_AllDay = new System.Windows.Forms.CheckBox();
             this.lblEvent_Location = new System.Windows.Forms.Label();
             this.txtEvent_Location = new System.Windows.Forms.TextBox();
@@ -68,8 +82,28 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.dtpEvent_StartTime = new System.Windows.Forms.DateTimePicker();
-            this.dtpEvent_EndTime = new System.Windows.Forms.DateTimePicker();
+            this.lblContact_MobilePhone = new System.Windows.Forms.Label();
+            this.txtContact_MobilePhone = new System.Windows.Forms.TextBox();
+            this.lblContact_WorkPhone = new System.Windows.Forms.Label();
+            this.txtContact_WorkPhone = new System.Windows.Forms.TextBox();
+            this.lblContact_Web = new System.Windows.Forms.Label();
+            this.txtContact_Web = new System.Windows.Forms.TextBox();
+            this.lblContact_Mail = new System.Windows.Forms.Label();
+            this.txtContact_Mail = new System.Windows.Forms.TextBox();
+            this.lblContact_BirthDate = new System.Windows.Forms.Label();
+            this.dtpContact_BirthDate = new System.Windows.Forms.DateTimePicker();
+            this.lblContact_Note = new System.Windows.Forms.Label();
+            this.txtContact_Note = new System.Windows.Forms.TextBox();
+            this.lblContact_City = new System.Windows.Forms.Label();
+            this.txtContact_City = new System.Windows.Forms.TextBox();
+            this.lblContact_Address = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtContact_Number = new System.Windows.Forms.TextBox();
+            this.lblContact_Number = new System.Windows.Forms.Label();
+            this.lblContact_State = new System.Windows.Forms.Label();
+            this.txtContact_State = new System.Windows.Forms.TextBox();
+            this.lblContact_Zip = new System.Windows.Forms.Label();
+            this.txtContact_Zip = new System.Windows.Forms.TextBox();
             this.tcResult.SuspendLayout();
             this.tabImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
@@ -77,6 +111,12 @@
             this.tabData.SuspendLayout();
             this.tcInput.SuspendLayout();
             this.tabUrl.SuspendLayout();
+            this.tabContact.SuspendLayout();
+            this.tcContact.SuspendLayout();
+            this.tabContact_Phones.SuspendLayout();
+            this.tabContact_Address.SuspendLayout();
+            this.tabContact_Mail.SuspendLayout();
+            this.tabContact_Other.SuspendLayout();
             this.tabEvent.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -325,6 +365,11 @@
             // 
             // tabContact
             // 
+            this.tabContact.Controls.Add(this.lblContact_Lastname);
+            this.tabContact.Controls.Add(this.lblContact_Firstname);
+            this.tabContact.Controls.Add(this.txtContact_Lastname);
+            this.tabContact.Controls.Add(this.txtContact_Firstname);
+            this.tabContact.Controls.Add(this.tcContact);
             this.tabContact.Location = new System.Drawing.Point(4, 22);
             this.tabContact.Name = "tabContact";
             this.tabContact.Padding = new System.Windows.Forms.Padding(3);
@@ -332,6 +377,147 @@
             this.tabContact.TabIndex = 1;
             this.tabContact.Text = "Contact";
             this.tabContact.UseVisualStyleBackColor = true;
+            // 
+            // lblContact_Lastname
+            // 
+            this.lblContact_Lastname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContact_Lastname.AutoSize = true;
+            this.lblContact_Lastname.Location = new System.Drawing.Point(261, 7);
+            this.lblContact_Lastname.Name = "lblContact_Lastname";
+            this.lblContact_Lastname.Size = new System.Drawing.Size(53, 13);
+            this.lblContact_Lastname.TabIndex = 14;
+            this.lblContact_Lastname.Text = "Lastname";
+            // 
+            // lblContact_Firstname
+            // 
+            this.lblContact_Firstname.AutoSize = true;
+            this.lblContact_Firstname.Location = new System.Drawing.Point(6, 7);
+            this.lblContact_Firstname.Name = "lblContact_Firstname";
+            this.lblContact_Firstname.Size = new System.Drawing.Size(52, 13);
+            this.lblContact_Firstname.TabIndex = 13;
+            this.lblContact_Firstname.Text = "Firstname";
+            // 
+            // txtContact_Lastname
+            // 
+            this.txtContact_Lastname.AllowDrop = true;
+            this.txtContact_Lastname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Lastname.Location = new System.Drawing.Point(261, 23);
+            this.txtContact_Lastname.Name = "txtContact_Lastname";
+            this.txtContact_Lastname.Size = new System.Drawing.Size(246, 20);
+            this.txtContact_Lastname.TabIndex = 2;
+            // 
+            // txtContact_Firstname
+            // 
+            this.txtContact_Firstname.AllowDrop = true;
+            this.txtContact_Firstname.Location = new System.Drawing.Point(6, 23);
+            this.txtContact_Firstname.Name = "txtContact_Firstname";
+            this.txtContact_Firstname.Size = new System.Drawing.Size(249, 20);
+            this.txtContact_Firstname.TabIndex = 1;
+            // 
+            // tcContact
+            // 
+            this.tcContact.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tcContact.Controls.Add(this.tabContact_Phones);
+            this.tcContact.Controls.Add(this.tabContact_Address);
+            this.tcContact.Controls.Add(this.tabContact_Mail);
+            this.tcContact.Controls.Add(this.tabContact_Other);
+            this.tcContact.Controls.Add(this.tabContact_Options);
+            this.tcContact.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tcContact.Location = new System.Drawing.Point(3, 49);
+            this.tcContact.Name = "tcContact";
+            this.tcContact.SelectedIndex = 0;
+            this.tcContact.Size = new System.Drawing.Size(508, 148);
+            this.tcContact.TabIndex = 0;
+            // 
+            // tabContact_Phones
+            // 
+            this.tabContact_Phones.BackColor = System.Drawing.Color.White;
+            this.tabContact_Phones.Controls.Add(this.lblContact_WorkPhone);
+            this.tabContact_Phones.Controls.Add(this.txtContact_WorkPhone);
+            this.tabContact_Phones.Controls.Add(this.lblContact_MobilePhone);
+            this.tabContact_Phones.Controls.Add(this.txtContact_MobilePhone);
+            this.tabContact_Phones.Controls.Add(this.lblContact_Phone);
+            this.tabContact_Phones.Controls.Add(this.txtContact_Phone);
+            this.tabContact_Phones.Location = new System.Drawing.Point(4, 4);
+            this.tabContact_Phones.Name = "tabContact_Phones";
+            this.tabContact_Phones.Padding = new System.Windows.Forms.Padding(3);
+            this.tabContact_Phones.Size = new System.Drawing.Size(500, 122);
+            this.tabContact_Phones.TabIndex = 0;
+            this.tabContact_Phones.Text = "Phones";
+            // 
+            // lblContact_Phone
+            // 
+            this.lblContact_Phone.AutoSize = true;
+            this.lblContact_Phone.Location = new System.Drawing.Point(6, 3);
+            this.lblContact_Phone.Name = "lblContact_Phone";
+            this.lblContact_Phone.Size = new System.Drawing.Size(38, 13);
+            this.lblContact_Phone.TabIndex = 15;
+            this.lblContact_Phone.Text = "Phone";
+            // 
+            // txtContact_Phone
+            // 
+            this.txtContact_Phone.AllowDrop = true;
+            this.txtContact_Phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Phone.Location = new System.Drawing.Point(6, 19);
+            this.txtContact_Phone.Name = "txtContact_Phone";
+            this.txtContact_Phone.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_Phone.TabIndex = 14;
+            // 
+            // tabContact_Address
+            // 
+            this.tabContact_Address.Controls.Add(this.lblContact_Zip);
+            this.tabContact_Address.Controls.Add(this.txtContact_Zip);
+            this.tabContact_Address.Controls.Add(this.lblContact_State);
+            this.tabContact_Address.Controls.Add(this.txtContact_State);
+            this.tabContact_Address.Controls.Add(this.lblContact_Number);
+            this.tabContact_Address.Controls.Add(this.txtContact_Number);
+            this.tabContact_Address.Controls.Add(this.lblContact_City);
+            this.tabContact_Address.Controls.Add(this.txtContact_City);
+            this.tabContact_Address.Controls.Add(this.lblContact_Address);
+            this.tabContact_Address.Controls.Add(this.textBox2);
+            this.tabContact_Address.Location = new System.Drawing.Point(4, 4);
+            this.tabContact_Address.Name = "tabContact_Address";
+            this.tabContact_Address.Padding = new System.Windows.Forms.Padding(3);
+            this.tabContact_Address.Size = new System.Drawing.Size(500, 122);
+            this.tabContact_Address.TabIndex = 1;
+            this.tabContact_Address.Text = "Address";
+            this.tabContact_Address.UseVisualStyleBackColor = true;
+            // 
+            // tabContact_Mail
+            // 
+            this.tabContact_Mail.Controls.Add(this.lblContact_Web);
+            this.tabContact_Mail.Controls.Add(this.txtContact_Web);
+            this.tabContact_Mail.Controls.Add(this.lblContact_Mail);
+            this.tabContact_Mail.Controls.Add(this.txtContact_Mail);
+            this.tabContact_Mail.Location = new System.Drawing.Point(4, 4);
+            this.tabContact_Mail.Name = "tabContact_Mail";
+            this.tabContact_Mail.Size = new System.Drawing.Size(500, 122);
+            this.tabContact_Mail.TabIndex = 2;
+            this.tabContact_Mail.Text = "Mail / Web";
+            this.tabContact_Mail.UseVisualStyleBackColor = true;
+            // 
+            // tabContact_Other
+            // 
+            this.tabContact_Other.Controls.Add(this.lblContact_Note);
+            this.tabContact_Other.Controls.Add(this.txtContact_Note);
+            this.tabContact_Other.Controls.Add(this.lblContact_BirthDate);
+            this.tabContact_Other.Controls.Add(this.dtpContact_BirthDate);
+            this.tabContact_Other.Location = new System.Drawing.Point(4, 4);
+            this.tabContact_Other.Name = "tabContact_Other";
+            this.tabContact_Other.Size = new System.Drawing.Size(500, 122);
+            this.tabContact_Other.TabIndex = 3;
+            this.tabContact_Other.Text = "Other";
+            this.tabContact_Other.UseVisualStyleBackColor = true;
+            // 
+            // tabContact_Options
+            // 
+            this.tabContact_Options.Location = new System.Drawing.Point(4, 4);
+            this.tabContact_Options.Name = "tabContact_Options";
+            this.tabContact_Options.Size = new System.Drawing.Size(500, 122);
+            this.tabContact_Options.TabIndex = 4;
+            this.tabContact_Options.Text = "Options";
+            this.tabContact_Options.UseVisualStyleBackColor = true;
             // 
             // tabEvent
             // 
@@ -355,6 +541,27 @@
             this.tabEvent.TabIndex = 2;
             this.tabEvent.Text = "Event";
             this.tabEvent.UseVisualStyleBackColor = true;
+            // 
+            // dtpEvent_EndTime
+            // 
+            this.dtpEvent_EndTime.CustomFormat = "HH:mm";
+            this.dtpEvent_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEvent_EndTime.Location = new System.Drawing.Point(319, 172);
+            this.dtpEvent_EndTime.Name = "dtpEvent_EndTime";
+            this.dtpEvent_EndTime.ShowUpDown = true;
+            this.dtpEvent_EndTime.Size = new System.Drawing.Size(59, 20);
+            this.dtpEvent_EndTime.TabIndex = 12;
+            // 
+            // dtpEvent_StartTime
+            // 
+            this.dtpEvent_StartTime.CustomFormat = "HH:mm";
+            this.dtpEvent_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEvent_StartTime.Location = new System.Drawing.Point(125, 172);
+            this.dtpEvent_StartTime.Name = "dtpEvent_StartTime";
+            this.dtpEvent_StartTime.ShowUpDown = true;
+            this.dtpEvent_StartTime.Size = new System.Drawing.Size(59, 20);
+            this.dtpEvent_StartTime.TabIndex = 11;
+            this.dtpEvent_StartTime.ValueChanged += new System.EventHandler(this.dtpEvent_StartTime_ValueChanged);
             // 
             // chkEvent_AllDay
             // 
@@ -497,26 +704,208 @@
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
-            // dtpEvent_StartTime
+            // lblContact_MobilePhone
             // 
-            this.dtpEvent_StartTime.CustomFormat = "HH:mm";
-            this.dtpEvent_StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEvent_StartTime.Location = new System.Drawing.Point(125, 172);
-            this.dtpEvent_StartTime.Name = "dtpEvent_StartTime";
-            this.dtpEvent_StartTime.ShowUpDown = true;
-            this.dtpEvent_StartTime.Size = new System.Drawing.Size(59, 20);
-            this.dtpEvent_StartTime.TabIndex = 11;
-            this.dtpEvent_StartTime.ValueChanged += new System.EventHandler(this.dtpEvent_StartTime_ValueChanged);
+            this.lblContact_MobilePhone.AutoSize = true;
+            this.lblContact_MobilePhone.Location = new System.Drawing.Point(6, 42);
+            this.lblContact_MobilePhone.Name = "lblContact_MobilePhone";
+            this.lblContact_MobilePhone.Size = new System.Drawing.Size(71, 13);
+            this.lblContact_MobilePhone.TabIndex = 17;
+            this.lblContact_MobilePhone.Text = "Mobile phone";
             // 
-            // dtpEvent_EndTime
+            // txtContact_MobilePhone
             // 
-            this.dtpEvent_EndTime.CustomFormat = "HH:mm";
-            this.dtpEvent_EndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEvent_EndTime.Location = new System.Drawing.Point(319, 172);
-            this.dtpEvent_EndTime.Name = "dtpEvent_EndTime";
-            this.dtpEvent_EndTime.ShowUpDown = true;
-            this.dtpEvent_EndTime.Size = new System.Drawing.Size(59, 20);
-            this.dtpEvent_EndTime.TabIndex = 12;
+            this.txtContact_MobilePhone.AllowDrop = true;
+            this.txtContact_MobilePhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_MobilePhone.Location = new System.Drawing.Point(6, 58);
+            this.txtContact_MobilePhone.Name = "txtContact_MobilePhone";
+            this.txtContact_MobilePhone.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_MobilePhone.TabIndex = 16;
+            // 
+            // lblContact_WorkPhone
+            // 
+            this.lblContact_WorkPhone.AutoSize = true;
+            this.lblContact_WorkPhone.Location = new System.Drawing.Point(6, 81);
+            this.lblContact_WorkPhone.Name = "lblContact_WorkPhone";
+            this.lblContact_WorkPhone.Size = new System.Drawing.Size(66, 13);
+            this.lblContact_WorkPhone.TabIndex = 19;
+            this.lblContact_WorkPhone.Text = "Work phone";
+            // 
+            // txtContact_WorkPhone
+            // 
+            this.txtContact_WorkPhone.AllowDrop = true;
+            this.txtContact_WorkPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_WorkPhone.Location = new System.Drawing.Point(6, 97);
+            this.txtContact_WorkPhone.Name = "txtContact_WorkPhone";
+            this.txtContact_WorkPhone.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_WorkPhone.TabIndex = 18;
+            // 
+            // lblContact_Web
+            // 
+            this.lblContact_Web.AutoSize = true;
+            this.lblContact_Web.Location = new System.Drawing.Point(6, 45);
+            this.lblContact_Web.Name = "lblContact_Web";
+            this.lblContact_Web.Size = new System.Drawing.Size(49, 13);
+            this.lblContact_Web.TabIndex = 21;
+            this.lblContact_Web.Text = "Web site";
+            // 
+            // txtContact_Web
+            // 
+            this.txtContact_Web.AllowDrop = true;
+            this.txtContact_Web.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Web.Location = new System.Drawing.Point(6, 61);
+            this.txtContact_Web.Name = "txtContact_Web";
+            this.txtContact_Web.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_Web.TabIndex = 20;
+            // 
+            // lblContact_Mail
+            // 
+            this.lblContact_Mail.AutoSize = true;
+            this.lblContact_Mail.Location = new System.Drawing.Point(6, 6);
+            this.lblContact_Mail.Name = "lblContact_Mail";
+            this.lblContact_Mail.Size = new System.Drawing.Size(26, 13);
+            this.lblContact_Mail.TabIndex = 19;
+            this.lblContact_Mail.Text = "Mail";
+            // 
+            // txtContact_Mail
+            // 
+            this.txtContact_Mail.AllowDrop = true;
+            this.txtContact_Mail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Mail.Location = new System.Drawing.Point(6, 22);
+            this.txtContact_Mail.Name = "txtContact_Mail";
+            this.txtContact_Mail.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_Mail.TabIndex = 18;
+            // 
+            // lblContact_BirthDate
+            // 
+            this.lblContact_BirthDate.AutoSize = true;
+            this.lblContact_BirthDate.Location = new System.Drawing.Point(6, 3);
+            this.lblContact_BirthDate.Name = "lblContact_BirthDate";
+            this.lblContact_BirthDate.Size = new System.Drawing.Size(52, 13);
+            this.lblContact_BirthDate.TabIndex = 3;
+            this.lblContact_BirthDate.Text = "Birth date";
+            // 
+            // dtpContact_BirthDate
+            // 
+            this.dtpContact_BirthDate.CustomFormat = "dd MMM yyyy";
+            this.dtpContact_BirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpContact_BirthDate.Location = new System.Drawing.Point(9, 19);
+            this.dtpContact_BirthDate.Name = "dtpContact_BirthDate";
+            this.dtpContact_BirthDate.Size = new System.Drawing.Size(110, 20);
+            this.dtpContact_BirthDate.TabIndex = 2;
+            // 
+            // lblContact_Note
+            // 
+            this.lblContact_Note.AutoSize = true;
+            this.lblContact_Note.Location = new System.Drawing.Point(6, 43);
+            this.lblContact_Note.Name = "lblContact_Note";
+            this.lblContact_Note.Size = new System.Drawing.Size(30, 13);
+            this.lblContact_Note.TabIndex = 21;
+            this.lblContact_Note.Text = "Note";
+            // 
+            // txtContact_Note
+            // 
+            this.txtContact_Note.AllowDrop = true;
+            this.txtContact_Note.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Note.Location = new System.Drawing.Point(6, 59);
+            this.txtContact_Note.Name = "txtContact_Note";
+            this.txtContact_Note.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_Note.TabIndex = 20;
+            // 
+            // lblContact_City
+            // 
+            this.lblContact_City.AutoSize = true;
+            this.lblContact_City.Location = new System.Drawing.Point(66, 45);
+            this.lblContact_City.Name = "lblContact_City";
+            this.lblContact_City.Size = new System.Drawing.Size(24, 13);
+            this.lblContact_City.TabIndex = 25;
+            this.lblContact_City.Text = "City";
+            // 
+            // txtContact_City
+            // 
+            this.txtContact_City.AllowDrop = true;
+            this.txtContact_City.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_City.Location = new System.Drawing.Point(68, 61);
+            this.txtContact_City.Name = "txtContact_City";
+            this.txtContact_City.Size = new System.Drawing.Size(375, 20);
+            this.txtContact_City.TabIndex = 24;
+            // 
+            // lblContact_Address
+            // 
+            this.lblContact_Address.AutoSize = true;
+            this.lblContact_Address.Location = new System.Drawing.Point(6, 6);
+            this.lblContact_Address.Name = "lblContact_Address";
+            this.lblContact_Address.Size = new System.Drawing.Size(45, 13);
+            this.lblContact_Address.TabIndex = 23;
+            this.lblContact_Address.Text = "Address";
+            // 
+            // textBox2
+            // 
+            this.textBox2.AllowDrop = true;
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(6, 22);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(437, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // txtContact_Number
+            // 
+            this.txtContact_Number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Number.Location = new System.Drawing.Point(449, 22);
+            this.txtContact_Number.Name = "txtContact_Number";
+            this.txtContact_Number.Size = new System.Drawing.Size(45, 20);
+            this.txtContact_Number.TabIndex = 26;
+            // 
+            // lblContact_Number
+            // 
+            this.lblContact_Number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContact_Number.AutoSize = true;
+            this.lblContact_Number.Location = new System.Drawing.Point(446, 6);
+            this.lblContact_Number.Name = "lblContact_Number";
+            this.lblContact_Number.Size = new System.Drawing.Size(45, 13);
+            this.lblContact_Number.TabIndex = 27;
+            this.lblContact_Number.Text = "Address";
+            // 
+            // lblContact_State
+            // 
+            this.lblContact_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblContact_State.AutoSize = true;
+            this.lblContact_State.Location = new System.Drawing.Point(446, 45);
+            this.lblContact_State.Name = "lblContact_State";
+            this.lblContact_State.Size = new System.Drawing.Size(32, 13);
+            this.lblContact_State.TabIndex = 29;
+            this.lblContact_State.Text = "State";
+            // 
+            // txtContact_State
+            // 
+            this.txtContact_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_State.Location = new System.Drawing.Point(449, 61);
+            this.txtContact_State.Name = "txtContact_State";
+            this.txtContact_State.Size = new System.Drawing.Size(45, 20);
+            this.txtContact_State.TabIndex = 28;
+            // 
+            // lblContact_Zip
+            // 
+            this.lblContact_Zip.AutoSize = true;
+            this.lblContact_Zip.Location = new System.Drawing.Point(3, 45);
+            this.lblContact_Zip.Name = "lblContact_Zip";
+            this.lblContact_Zip.Size = new System.Drawing.Size(24, 13);
+            this.lblContact_Zip.TabIndex = 31;
+            this.lblContact_Zip.Text = "ZIP";
+            // 
+            // txtContact_Zip
+            // 
+            this.txtContact_Zip.Location = new System.Drawing.Point(6, 61);
+            this.txtContact_Zip.Name = "txtContact_Zip";
+            this.txtContact_Zip.Size = new System.Drawing.Size(56, 20);
+            this.txtContact_Zip.TabIndex = 30;
             // 
             // GeneratorForm
             // 
@@ -539,6 +928,17 @@
             this.tcInput.ResumeLayout(false);
             this.tabUrl.ResumeLayout(false);
             this.tabUrl.PerformLayout();
+            this.tabContact.ResumeLayout(false);
+            this.tabContact.PerformLayout();
+            this.tcContact.ResumeLayout(false);
+            this.tabContact_Phones.ResumeLayout(false);
+            this.tabContact_Phones.PerformLayout();
+            this.tabContact_Address.ResumeLayout(false);
+            this.tabContact_Address.PerformLayout();
+            this.tabContact_Mail.ResumeLayout(false);
+            this.tabContact_Mail.PerformLayout();
+            this.tabContact_Other.ResumeLayout(false);
+            this.tabContact_Other.PerformLayout();
             this.tabEvent.ResumeLayout(false);
             this.tabEvent.PerformLayout();
             this.ResumeLayout(false);
@@ -589,6 +989,40 @@
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.DateTimePicker dtpEvent_EndTime;
         private System.Windows.Forms.DateTimePicker dtpEvent_StartTime;
+        private System.Windows.Forms.TextBox txtContact_Firstname;
+        private System.Windows.Forms.TabControl tcContact;
+        private System.Windows.Forms.TabPage tabContact_Phones;
+        private System.Windows.Forms.TabPage tabContact_Address;
+        private System.Windows.Forms.TabPage tabContact_Mail;
+        private System.Windows.Forms.TabPage tabContact_Other;
+        private System.Windows.Forms.TabPage tabContact_Options;
+        private System.Windows.Forms.Label lblContact_Lastname;
+        private System.Windows.Forms.Label lblContact_Firstname;
+        private System.Windows.Forms.TextBox txtContact_Lastname;
+        private System.Windows.Forms.Label lblContact_Phone;
+        private System.Windows.Forms.TextBox txtContact_Phone;
+        private System.Windows.Forms.Label lblContact_WorkPhone;
+        private System.Windows.Forms.TextBox txtContact_WorkPhone;
+        private System.Windows.Forms.Label lblContact_MobilePhone;
+        private System.Windows.Forms.TextBox txtContact_MobilePhone;
+        private System.Windows.Forms.Label lblContact_Web;
+        private System.Windows.Forms.TextBox txtContact_Web;
+        private System.Windows.Forms.Label lblContact_Mail;
+        private System.Windows.Forms.TextBox txtContact_Mail;
+        private System.Windows.Forms.Label lblContact_Note;
+        private System.Windows.Forms.TextBox txtContact_Note;
+        private System.Windows.Forms.Label lblContact_BirthDate;
+        private System.Windows.Forms.DateTimePicker dtpContact_BirthDate;
+        private System.Windows.Forms.Label lblContact_State;
+        private System.Windows.Forms.TextBox txtContact_State;
+        private System.Windows.Forms.Label lblContact_Number;
+        private System.Windows.Forms.TextBox txtContact_Number;
+        private System.Windows.Forms.Label lblContact_City;
+        private System.Windows.Forms.TextBox txtContact_City;
+        private System.Windows.Forms.Label lblContact_Address;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblContact_Zip;
+        private System.Windows.Forms.TextBox txtContact_Zip;
     }
 }
 
