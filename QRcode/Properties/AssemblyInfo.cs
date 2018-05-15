@@ -1,4 +1,24 @@
-﻿using System.Reflection;
+﻿// copyright (c) 2018 Roberto Ceccarelli - Casasoft
+// https://strawberryfield.altervista.org 
+// 
+// This file is part of Casasoft QRcode
+// 
+// CasaSoft QRcode is free software: 
+// you can redistribute it and/or modify it
+// under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// CasaSoft QRcode is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+// See the GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with CasaSoft QRcode.  
+// If not, see <http://www.gnu.org/licenses/>.
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -6,8 +26,22 @@ using System.Runtime.InteropServices;
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
 [assembly: AssemblyTitle("Casasoft QRcode Generator")]
-[assembly: AssemblyDescription(@"Generatore di QRcode
-released under Creative Commons BY-NC-SA license")]
+[assembly: AssemblyDescription(@"QRcode Generator for Windows
+
+CasaSoft QRcode is free software: 
+you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+CasaSoft QRcode is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with CasaSoft QRcode.  
+If not, see <http://www.gnu.org/licenses/>.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Casasoft")]
 [assembly: AssemblyProduct("Casasoft QRcode")]
