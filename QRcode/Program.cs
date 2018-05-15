@@ -55,7 +55,7 @@ namespace Casasoft.QRcode
 
             ICatalog T = new Catalog(prgName, "./locale", locale);
 
-            GeneratorForm generator = new GeneratorForm();
+            GeneratorForm generator = new GeneratorForm(T);
 
             // GNU Getopt options
             LongOpt[] longopts = new LongOpt[6];

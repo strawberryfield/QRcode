@@ -18,6 +18,7 @@
 // along with CasaSoft QRcode.  
 // If not, see <http://www.gnu.org/licenses/>.
 
+using NGettext;
 using QRCoder;
 using System;
 using System.IO;
@@ -31,6 +32,7 @@ namespace Casasoft.QRcode
     {
         protected QRCodeGenerator qrGenerator;
         protected QRCodeData qrCodeData;
+        private ICatalog T; 
 
         #region public properties
         public int ElementSize
@@ -78,7 +80,13 @@ namespace Casasoft.QRcode
         }
         #endregion
 
+        #region constructors
         public GeneratorForm()
+        {
+            InitializeComponent();
+        }
+        
+        public GeneratorForm(ICatalog T)
         {
             InitializeComponent();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
@@ -91,11 +99,17 @@ namespace Casasoft.QRcode
             AddBorder = true;
             Payload = "";
 
-            saveFileDialog.Filter = "Jpeg image|*.jpg;*.jpeg|Bitmap image|*.bmp|PNG image|*.png|GIF image|*.gif|TIFF image|*.tif;*.tiff|SVG image|*.svg";
+            saveFileDialog.Filter = T.GetString("Jpeg image") + "|*.jpg;*.jpeg"
+                + "|" + T.GetString("Bitmap image") + "|*.bmp"
+                + "|" + T.GetString("PNG image") + "|*.png"
+                + "|" + T.GetString("GIF image") + "|*.gif"
+                + "|" + T.GetString("TIFF image") + "|*.tif;*.tiff"
+                + "|" + T.GetString("SVG image") + "|*.svg";
 
             qrGenerator = new QRCodeGenerator();
             refreshData();
         }
+        #endregion
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
