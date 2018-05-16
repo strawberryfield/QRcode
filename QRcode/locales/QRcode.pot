@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: QRcode\n"
-"POT-Creation-Date: 2018-05-16 20:43+0200\n"
+"POT-Creation-Date: 2018-05-16 22:03+0200\n"
 "PO-Revision-Date: 2018-05-16 20:44+0200\n"
 "Last-Translator: Roberto Ceccarelli (The Strawberry Field) <strawberry."
 "field@libero.it>\n"
@@ -16,28 +17,198 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: GeneratorForm.cs:102
-msgid "Jpeg image"
+#: AboutBox.cs:34
+#, csharp-format
+msgid "About {0}"
 msgstr ""
 
-#: GeneratorForm.cs:103
-msgid "Bitmap image"
+#: AboutBox.cs:36
+#, csharp-format
+msgid "Version {0}"
 msgstr ""
 
 #: GeneratorForm.cs:104
-msgid "PNG image"
+msgid "Jpeg image"
 msgstr ""
 
 #: GeneratorForm.cs:105
-msgid "GIF image"
+msgid "Bitmap image"
 msgstr ""
 
 #: GeneratorForm.cs:106
-msgid "TIFF image"
+msgid "PNG image"
 msgstr ""
 
 #: GeneratorForm.cs:107
+msgid "GIF image"
+msgstr ""
+
+#: GeneratorForm.cs:108
+msgid "TIFF image"
+msgstr ""
+
+#: GeneratorForm.cs:109
 msgid "SVG image"
+msgstr ""
+
+#: GeneratorForm.cs:119
+msgid "About"
+msgstr ""
+
+#: GeneratorForm.cs:120
+msgid "Image"
+msgstr ""
+
+#: GeneratorForm.cs:121
+msgid "Error correction level"
+msgstr ""
+
+#: GeneratorForm.cs:122
+msgid "Add empty border"
+msgstr ""
+
+#: GeneratorForm.cs:123
+msgid "Element size (px)"
+msgstr ""
+
+#: GeneratorForm.cs:124 GeneratorForm.cs:126
+msgid "Select"
+msgstr ""
+
+#: GeneratorForm.cs:125
+msgid "Background color"
+msgstr ""
+
+#: GeneratorForm.cs:127
+msgid "Foreground color"
+msgstr ""
+
+#: GeneratorForm.cs:128
+msgid "Text"
+msgstr ""
+
+#: GeneratorForm.cs:129 GeneratorForm.cs:130
+msgid "URL"
+msgstr ""
+
+#: GeneratorForm.cs:131
+msgid "Contact"
+msgstr ""
+
+#: GeneratorForm.cs:132
+msgid "Lastname"
+msgstr ""
+
+#: GeneratorForm.cs:133
+msgid "Firstname"
+msgstr ""
+
+#: GeneratorForm.cs:134
+msgid "Phones"
+msgstr ""
+
+#: GeneratorForm.cs:135
+msgid "Work phone"
+msgstr ""
+
+#: GeneratorForm.cs:136
+msgid "Mobile phone"
+msgstr ""
+
+#: GeneratorForm.cs:137
+msgid "Phone"
+msgstr ""
+
+#: GeneratorForm.cs:138 GeneratorForm.cs:141 GeneratorForm.cs:143
+msgid "Address"
+msgstr ""
+
+#: GeneratorForm.cs:139
+msgid "ZIP"
+msgstr ""
+
+#: GeneratorForm.cs:140
+msgid "State"
+msgstr ""
+
+#: GeneratorForm.cs:142
+msgid "City"
+msgstr ""
+
+#: GeneratorForm.cs:144
+msgid "Mail / Web"
+msgstr ""
+
+#: GeneratorForm.cs:145
+msgid "Web site"
+msgstr ""
+
+#: GeneratorForm.cs:146
+msgid "Mail"
+msgstr ""
+
+#: GeneratorForm.cs:147
+msgid "Other"
+msgstr ""
+
+#: GeneratorForm.cs:148
+msgid "Note"
+msgstr ""
+
+#: GeneratorForm.cs:149
+msgid "Birth date"
+msgstr ""
+
+#: GeneratorForm.cs:150
+msgid "Options"
+msgstr ""
+
+#: GeneratorForm.cs:151
+msgid "Event"
+msgstr ""
+
+#: GeneratorForm.cs:152
+msgid "All day event"
+msgstr ""
+
+#: GeneratorForm.cs:153
+msgid "Location"
+msgstr ""
+
+#: GeneratorForm.cs:154
+msgid "Description"
+msgstr ""
+
+#: GeneratorForm.cs:155
+msgid "Event name"
+msgstr ""
+
+#: GeneratorForm.cs:156
+msgid "Event end"
+msgstr ""
+
+#: GeneratorForm.cs:157
+msgid "Event start"
+msgstr ""
+
+#: GeneratorForm.cs:158
+msgid "Generate"
+msgstr ""
+
+#: GeneratorForm.cs:159
+msgid "Save"
+msgstr ""
+
+#: GeneratorForm.cs:160
+msgid "Copy"
+msgstr ""
+
+#: GeneratorForm.cs:161
+msgid "Clear"
+msgstr ""
+
+#: GeneratorForm.cs:162
+msgid "Nickname"
 msgstr ""
 
 #: Program.cs:75

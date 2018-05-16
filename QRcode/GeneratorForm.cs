@@ -91,6 +91,7 @@ namespace Casasoft.QRcode
             InitializeComponent();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
             this.T = T;
+            translate();
 
             // Default values
             ErrorCorrectionLevel = 'Q';
@@ -109,6 +110,56 @@ namespace Casasoft.QRcode
 
             qrGenerator = new QRCodeGenerator();
             refreshData();
+        }
+        #endregion
+
+        #region translations
+        private void translate()
+        {
+            this.btnAbout.Text = T.GetString( "About");
+            this.tabImage.Text = T.GetString( "Image");
+            this.lblECC.Text = T.GetString( "Error correction level");
+            this.chkBorder.Text = T.GetString( "Add empty border");
+            this.lblSize.Text = T.GetString( "Element size (px)");
+            this.btnBackColor.Text = T.GetString( "Select");
+            this.lblBackColor.Text = T.GetString( "Background color");
+            this.btnForeColor.Text = T.GetString( "Select");
+            this.lblForeColor.Text = T.GetString( "Foreground color");
+            this.tabData.Text = T.GetString( "Text");
+            this.tabUrl.Text = T.GetString( "URL");
+            this.lblURL_url.Text = T.GetString( "URL");
+            this.tabContact.Text = T.GetString( "Contact");
+            this.lblContact_Lastname.Text = T.GetString( "Lastname");
+            this.lblContact_Firstname.Text = T.GetString( "Firstname");
+            this.tabContact_Phones.Text = T.GetString( "Phones");
+            this.lblContact_WorkPhone.Text = T.GetString( "Work phone");
+            this.lblContact_MobilePhone.Text = T.GetString( "Mobile phone");
+            this.lblContact_Phone.Text = T.GetString( "Phone");
+            this.tabContact_Address.Text = T.GetString( "Address");
+            this.lblContact_Zip.Text = T.GetString( "ZIP");
+            this.lblContact_State.Text = T.GetString( "State");
+            this.lblContact_Number.Text = T.GetString( "Address");
+            this.lblContact_City.Text = T.GetString( "City");
+            this.lblContact_Address.Text = T.GetString( "Address");
+            this.tabContact_Mail.Text = T.GetString( "Mail / Web");
+            this.lblContact_Web.Text = T.GetString( "Web site");
+            this.lblContact_Mail.Text = T.GetString( "Mail");
+            this.tabContact_Other.Text = T.GetString( "Other");
+            this.lblContact_Note.Text = T.GetString( "Note");
+            this.lblContact_BirthDate.Text = T.GetString( "Birth date");
+            this.tabContact_Options.Text = T.GetString( "Options");
+            this.tabEvent.Text = T.GetString( "Event");
+            this.chkEvent_AllDay.Text = T.GetString( "All day event");
+            this.lblEvent_Location.Text = T.GetString( "Location");
+            this.lblEvent_Description.Text = T.GetString( "Description");
+            this.lblEvent_Name.Text = T.GetString( "Event name");
+            this.lblEvent_End.Text = T.GetString( "Event end");
+            this.lblEvent_Start.Text = T.GetString( "Event start");
+            this.btnUpdate.Text = T.GetString( "Generate");
+            this.btnSave.Text = T.GetString( "Save");
+            this.btnCopy.Text = T.GetString( "Copy");
+            this.btnContact_BirthDateClear.Text = T.GetString( "Clear");
+            this.lblContact_Nick.Text = T.GetString( "Nickname");
         }
         #endregion
 

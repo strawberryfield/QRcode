@@ -1,9 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: QRcode\n"
-"POT-Creation-Date: 2018-05-16 20:47+0200\n"
-"PO-Revision-Date: 2018-05-16 20:49+0200\n"
+"POT-Creation-Date: 2018-05-16 22:05+0200\n"
+"PO-Revision-Date: 2018-05-16 22:11+0200\n"
+"Last-Translator: Roberto Ceccarelli (The Strawberry Field) <strawberry."
+"field@libero.it>\n"
 "Language-Team: The Strawberry Field - Roberto Ceccarelli\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,33 +14,201 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Last-Translator: Roberto Ceccarelli (The Strawberry Field) <strawberry.field@libero.it>\n"
-"Language: it\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: GeneratorForm.cs:102
+#: AboutBox.cs:34
+#, csharp-format
+msgid "About {0}"
+msgstr "Informazioni su {0}"
+
+#: AboutBox.cs:36
+#, csharp-format
+msgid "Version {0}"
+msgstr "Versione {0}"
+
+#: GeneratorForm.cs:104
 msgid "Jpeg image"
 msgstr "Immagine Jpeg"
 
-#: GeneratorForm.cs:103
+#: GeneratorForm.cs:105
 msgid "Bitmap image"
 msgstr "Immagine Bitmap"
 
-#: GeneratorForm.cs:104
+#: GeneratorForm.cs:106
 msgid "PNG image"
 msgstr "Immagine PNG"
 
-#: GeneratorForm.cs:105
+#: GeneratorForm.cs:107
 msgid "GIF image"
 msgstr "Immagine GIF"
 
-#: GeneratorForm.cs:106
+#: GeneratorForm.cs:108
 msgid "TIFF image"
 msgstr "Immagine TIFF"
 
-#: GeneratorForm.cs:107
+#: GeneratorForm.cs:109
 msgid "SVG image"
 msgstr "Immagine SVG"
+
+#: GeneratorForm.cs:119
+msgid "About"
+msgstr "Info"
+
+#: GeneratorForm.cs:120
+msgid "Image"
+msgstr "Immagine"
+
+#: GeneratorForm.cs:121
+msgid "Error correction level"
+msgstr "Livello di correzione degli errori"
+
+#: GeneratorForm.cs:122
+msgid "Add empty border"
+msgstr "Aggiungi bordo vuoto"
+
+#: GeneratorForm.cs:123
+msgid "Element size (px)"
+msgstr "Dimensione elemento (px)"
+
+#: GeneratorForm.cs:124 GeneratorForm.cs:126
+msgid "Select"
+msgstr "Seleziona"
+
+#: GeneratorForm.cs:125
+msgid "Background color"
+msgstr "Colore di sfondo"
+
+#: GeneratorForm.cs:127
+msgid "Foreground color"
+msgstr "Colore principale"
+
+#: GeneratorForm.cs:128
+msgid "Text"
+msgstr "Testo"
+
+#: GeneratorForm.cs:129 GeneratorForm.cs:130
+msgid "URL"
+msgstr ""
+
+#: GeneratorForm.cs:131
+msgid "Contact"
+msgstr "Contatto"
+
+#: GeneratorForm.cs:132
+msgid "Lastname"
+msgstr "Cognome"
+
+#: GeneratorForm.cs:133
+msgid "Firstname"
+msgstr "Nome"
+
+#: GeneratorForm.cs:134
+msgid "Phones"
+msgstr "Telefoni"
+
+#: GeneratorForm.cs:135
+msgid "Work phone"
+msgstr "Telefono ufficio"
+
+#: GeneratorForm.cs:136
+msgid "Mobile phone"
+msgstr "Cellulare"
+
+#: GeneratorForm.cs:137
+msgid "Phone"
+msgstr "Telefono"
+
+#: GeneratorForm.cs:138 GeneratorForm.cs:141 GeneratorForm.cs:143
+msgid "Address"
+msgstr "Indirizzo"
+
+#: GeneratorForm.cs:139
+msgid "ZIP"
+msgstr "CAP"
+
+#: GeneratorForm.cs:140
+msgid "State"
+msgstr "Prov."
+
+#: GeneratorForm.cs:142
+msgid "City"
+msgstr "Località"
+
+#: GeneratorForm.cs:144
+msgid "Mail / Web"
+msgstr ""
+
+#: GeneratorForm.cs:145
+msgid "Web site"
+msgstr "Sito web"
+
+#: GeneratorForm.cs:146
+msgid "Mail"
+msgstr ""
+
+#: GeneratorForm.cs:147
+msgid "Other"
+msgstr "Altro"
+
+#: GeneratorForm.cs:148
+msgid "Note"
+msgstr ""
+
+#: GeneratorForm.cs:149
+msgid "Birth date"
+msgstr "Data di nascita"
+
+#: GeneratorForm.cs:150
+msgid "Options"
+msgstr "Opzioni"
+
+#: GeneratorForm.cs:151
+msgid "Event"
+msgstr "Evento"
+
+#: GeneratorForm.cs:152
+msgid "All day event"
+msgstr "Tutto il giorno"
+
+#: GeneratorForm.cs:153
+msgid "Location"
+msgstr "Luogo"
+
+#: GeneratorForm.cs:154
+msgid "Description"
+msgstr "Descrizione"
+
+#: GeneratorForm.cs:155
+msgid "Event name"
+msgstr "Titolo"
+
+#: GeneratorForm.cs:156
+msgid "Event end"
+msgstr "Inizio"
+
+#: GeneratorForm.cs:157
+msgid "Event start"
+msgstr "Fine"
+
+#: GeneratorForm.cs:158
+msgid "Generate"
+msgstr "Genera"
+
+#: GeneratorForm.cs:159
+msgid "Save"
+msgstr "Salva"
+
+#: GeneratorForm.cs:160
+msgid "Copy"
+msgstr "Copia"
+
+#: GeneratorForm.cs:161
+msgid "Clear"
+msgstr "Cancella"
+
+#: GeneratorForm.cs:162
+msgid "Nickname"
+msgstr ""
 
 #: Program.cs:75
 #, csharp-format
