@@ -90,6 +90,7 @@ namespace Casasoft.QRcode
         {
             InitializeComponent();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
+            this.T = T;
 
             // Default values
             ErrorCorrectionLevel = 'Q';
@@ -113,7 +114,7 @@ namespace Casasoft.QRcode
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            AboutBox ab = new AboutBox();
+            AboutBox ab = new AboutBox(T);
             ab.ShowDialog();
         }
 

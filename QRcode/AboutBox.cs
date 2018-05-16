@@ -18,7 +18,7 @@
 // along with CasaSoft QRcode.  
 // If not, see <http://www.gnu.org/licenses/>.
 
-using System;
+using NGettext;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -26,12 +26,14 @@ namespace Casasoft.QRcode
 {
     partial class AboutBox : Form
     {
-        public AboutBox()
+        public AboutBox() { InitializeComponent(); }
+
+        public AboutBox(ICatalog T)
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.Text = T.GetString("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelVersion.Text = T.GetString("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;

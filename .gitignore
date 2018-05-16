@@ -289,3 +289,7 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/QRcode/strings.txt
+*.mo
+/QRcode/QRcode.pot
+/QRcode/translations/it.po
