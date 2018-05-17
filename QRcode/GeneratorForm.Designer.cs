@@ -100,11 +100,18 @@ namespace Casasoft.QRcode
             this.lblContact_Mail = new System.Windows.Forms.Label();
             this.txtContact_Mail = new System.Windows.Forms.TextBox();
             this.tabContact_Other = new System.Windows.Forms.TabPage();
+            this.lblContact_Nick = new System.Windows.Forms.Label();
+            this.txtContact_Nick = new System.Windows.Forms.TextBox();
+            this.btnContact_BirthDateClear = new System.Windows.Forms.Button();
             this.lblContact_Note = new System.Windows.Forms.Label();
             this.txtContact_Note = new System.Windows.Forms.TextBox();
             this.lblContact_BirthDate = new System.Windows.Forms.Label();
             this.dtpContact_BirthDate = new System.Windows.Forms.DateTimePicker();
             this.tabContact_Options = new System.Windows.Forms.TabPage();
+            this.rbContact4 = new System.Windows.Forms.RadioButton();
+            this.rbContact3 = new System.Windows.Forms.RadioButton();
+            this.rbContact2 = new System.Windows.Forms.RadioButton();
+            this.rbContact1 = new System.Windows.Forms.RadioButton();
             this.tabEvent = new System.Windows.Forms.TabPage();
             this.dtpEvent_EndTime = new System.Windows.Forms.DateTimePicker();
             this.dtpEvent_StartTime = new System.Windows.Forms.DateTimePicker();
@@ -124,13 +131,6 @@ namespace Casasoft.QRcode
             this.btnSave = new System.Windows.Forms.Button();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.btnCopy = new System.Windows.Forms.Button();
-            this.btnContact_BirthDateClear = new System.Windows.Forms.Button();
-            this.lblContact_Nick = new System.Windows.Forms.Label();
-            this.txtContact_Nick = new System.Windows.Forms.TextBox();
-            this.rbContact1 = new System.Windows.Forms.RadioButton();
-            this.rbContact2 = new System.Windows.Forms.RadioButton();
-            this.rbContact3 = new System.Windows.Forms.RadioButton();
-            this.rbContact4 = new System.Windows.Forms.RadioButton();
             this.tcResult.SuspendLayout();
             this.tabImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSize)).BeginInit();
@@ -590,9 +590,9 @@ namespace Casasoft.QRcode
             this.lblContact_Number.AutoSize = true;
             this.lblContact_Number.Location = new System.Drawing.Point(446, 6);
             this.lblContact_Number.Name = "lblContact_Number";
-            this.lblContact_Number.Size = new System.Drawing.Size(45, 13);
+            this.lblContact_Number.Size = new System.Drawing.Size(24, 13);
             this.lblContact_Number.TabIndex = 27;
-            this.lblContact_Number.Text = "Address";
+            this.lblContact_Number.Text = "No.";
             // 
             // txtContact_Number
             // 
@@ -707,6 +707,35 @@ namespace Casasoft.QRcode
             this.tabContact_Other.Text = "Other";
             this.tabContact_Other.UseVisualStyleBackColor = true;
             // 
+            // lblContact_Nick
+            // 
+            this.lblContact_Nick.AutoSize = true;
+            this.lblContact_Nick.Location = new System.Drawing.Point(6, 2);
+            this.lblContact_Nick.Name = "lblContact_Nick";
+            this.lblContact_Nick.Size = new System.Drawing.Size(55, 13);
+            this.lblContact_Nick.TabIndex = 24;
+            this.lblContact_Nick.Text = "Nickname";
+            // 
+            // txtContact_Nick
+            // 
+            this.txtContact_Nick.AllowDrop = true;
+            this.txtContact_Nick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContact_Nick.Location = new System.Drawing.Point(6, 18);
+            this.txtContact_Nick.Name = "txtContact_Nick";
+            this.txtContact_Nick.Size = new System.Drawing.Size(488, 20);
+            this.txtContact_Nick.TabIndex = 23;
+            // 
+            // btnContact_BirthDateClear
+            // 
+            this.btnContact_BirthDateClear.Location = new System.Drawing.Point(125, 57);
+            this.btnContact_BirthDateClear.Name = "btnContact_BirthDateClear";
+            this.btnContact_BirthDateClear.Size = new System.Drawing.Size(75, 20);
+            this.btnContact_BirthDateClear.TabIndex = 22;
+            this.btnContact_BirthDateClear.Text = "Clear";
+            this.btnContact_BirthDateClear.UseVisualStyleBackColor = true;
+            this.btnContact_BirthDateClear.Click += new System.EventHandler(this.btnContact_BirthDateClear_Click);
+            // 
             // lblContact_Note
             // 
             this.lblContact_Note.AutoSize = true;
@@ -758,6 +787,48 @@ namespace Casasoft.QRcode
             this.tabContact_Options.TabIndex = 4;
             this.tabContact_Options.Text = "Options";
             this.tabContact_Options.UseVisualStyleBackColor = true;
+            // 
+            // rbContact4
+            // 
+            this.rbContact4.AutoSize = true;
+            this.rbContact4.Location = new System.Drawing.Point(5, 72);
+            this.rbContact4.Name = "rbContact4";
+            this.rbContact4.Size = new System.Drawing.Size(62, 17);
+            this.rbContact4.TabIndex = 3;
+            this.rbContact4.Text = "MeCard";
+            this.rbContact4.UseVisualStyleBackColor = true;
+            // 
+            // rbContact3
+            // 
+            this.rbContact3.AutoSize = true;
+            this.rbContact3.Location = new System.Drawing.Point(5, 49);
+            this.rbContact3.Name = "rbContact3";
+            this.rbContact3.Size = new System.Drawing.Size(71, 17);
+            this.rbContact3.TabIndex = 2;
+            this.rbContact3.Text = "vCard 4.0";
+            this.rbContact3.UseVisualStyleBackColor = true;
+            // 
+            // rbContact2
+            // 
+            this.rbContact2.AutoSize = true;
+            this.rbContact2.Checked = true;
+            this.rbContact2.Location = new System.Drawing.Point(5, 26);
+            this.rbContact2.Name = "rbContact2";
+            this.rbContact2.Size = new System.Drawing.Size(71, 17);
+            this.rbContact2.TabIndex = 1;
+            this.rbContact2.TabStop = true;
+            this.rbContact2.Text = "vCard 3.0";
+            this.rbContact2.UseVisualStyleBackColor = true;
+            // 
+            // rbContact1
+            // 
+            this.rbContact1.AutoSize = true;
+            this.rbContact1.Location = new System.Drawing.Point(5, 3);
+            this.rbContact1.Name = "rbContact1";
+            this.rbContact1.Size = new System.Drawing.Size(71, 17);
+            this.rbContact1.TabIndex = 0;
+            this.rbContact1.Text = "vCard 2.1";
+            this.rbContact1.UseVisualStyleBackColor = true;
             // 
             // tabEvent
             // 
@@ -943,77 +1014,6 @@ namespace Casasoft.QRcode
             this.btnCopy.Text = "Copy";
             this.btnCopy.UseVisualStyleBackColor = true;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // btnContact_BirthDateClear
-            // 
-            this.btnContact_BirthDateClear.Location = new System.Drawing.Point(125, 57);
-            this.btnContact_BirthDateClear.Name = "btnContact_BirthDateClear";
-            this.btnContact_BirthDateClear.Size = new System.Drawing.Size(75, 20);
-            this.btnContact_BirthDateClear.TabIndex = 22;
-            this.btnContact_BirthDateClear.Text = "Clear";
-            this.btnContact_BirthDateClear.UseVisualStyleBackColor = true;
-            this.btnContact_BirthDateClear.Click += new System.EventHandler(this.btnContact_BirthDateClear_Click);
-            // 
-            // lblContact_Nick
-            // 
-            this.lblContact_Nick.AutoSize = true;
-            this.lblContact_Nick.Location = new System.Drawing.Point(6, 2);
-            this.lblContact_Nick.Name = "lblContact_Nick";
-            this.lblContact_Nick.Size = new System.Drawing.Size(55, 13);
-            this.lblContact_Nick.TabIndex = 24;
-            this.lblContact_Nick.Text = "Nickname";
-            // 
-            // txtContact_Nick
-            // 
-            this.txtContact_Nick.AllowDrop = true;
-            this.txtContact_Nick.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtContact_Nick.Location = new System.Drawing.Point(6, 18);
-            this.txtContact_Nick.Name = "txtContact_Nick";
-            this.txtContact_Nick.Size = new System.Drawing.Size(488, 20);
-            this.txtContact_Nick.TabIndex = 23;
-            // 
-            // rbContact1
-            // 
-            this.rbContact1.AutoSize = true;
-            this.rbContact1.Location = new System.Drawing.Point(5, 3);
-            this.rbContact1.Name = "rbContact1";
-            this.rbContact1.Size = new System.Drawing.Size(71, 17);
-            this.rbContact1.TabIndex = 0;
-            this.rbContact1.Text = "vCard 2.1";
-            this.rbContact1.UseVisualStyleBackColor = true;
-            // 
-            // rbContact2
-            // 
-            this.rbContact2.AutoSize = true;
-            this.rbContact2.Checked = true;
-            this.rbContact2.Location = new System.Drawing.Point(5, 26);
-            this.rbContact2.Name = "rbContact2";
-            this.rbContact2.Size = new System.Drawing.Size(71, 17);
-            this.rbContact2.TabIndex = 1;
-            this.rbContact2.TabStop = true;
-            this.rbContact2.Text = "vCard 3.0";
-            this.rbContact2.UseVisualStyleBackColor = true;
-            // 
-            // rbContact3
-            // 
-            this.rbContact3.AutoSize = true;
-            this.rbContact3.Location = new System.Drawing.Point(5, 49);
-            this.rbContact3.Name = "rbContact3";
-            this.rbContact3.Size = new System.Drawing.Size(71, 17);
-            this.rbContact3.TabIndex = 2;
-            this.rbContact3.Text = "vCard 4.0";
-            this.rbContact3.UseVisualStyleBackColor = true;
-            // 
-            // rbContact4
-            // 
-            this.rbContact4.AutoSize = true;
-            this.rbContact4.Location = new System.Drawing.Point(5, 72);
-            this.rbContact4.Name = "rbContact4";
-            this.rbContact4.Size = new System.Drawing.Size(62, 17);
-            this.rbContact4.TabIndex = 3;
-            this.rbContact4.Text = "MeCard";
-            this.rbContact4.UseVisualStyleBackColor = true;
             // 
             // GeneratorForm
             // 

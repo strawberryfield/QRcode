@@ -138,7 +138,7 @@ namespace Casasoft.QRcode
             this.tabContact_Address.Text = T.GetString( "Address");
             this.lblContact_Zip.Text = T.GetString( "ZIP");
             this.lblContact_State.Text = T.GetString( "State");
-            this.lblContact_Number.Text = T.GetString( "Address");
+            this.lblContact_Number.Text = T.GetString( "No.");
             this.lblContact_City.Text = T.GetString( "City");
             this.lblContact_Address.Text = T.GetString( "Address");
             this.tabContact_Mail.Text = T.GetString( "Mail / Web");
@@ -210,7 +210,7 @@ namespace Casasoft.QRcode
             refreshData();
         }
 
-        protected void refreshData()
+        public void refreshData()
         {
             if (qrGenerator == null)
                 return;

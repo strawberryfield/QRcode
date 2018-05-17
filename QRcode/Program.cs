@@ -18,14 +18,15 @@
 // along with CasaSoft QRcode.  
 // If not, see <http://www.gnu.org/licenses/>.
 
+using Gnu.Getopt;
+using NGettext;
 using System;
 using System.Configuration;
+using System.Drawing;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using Gnu.Getopt;
-using NGettext;
 
 namespace Casasoft.QRcode
 {
@@ -56,6 +57,31 @@ namespace Casasoft.QRcode
             ICatalog T = new Catalog(prgName, "./locale", locale);
 
             GeneratorForm generator = new GeneratorForm(T);
+
+            // Options from app.config
+            string forecolor = ConfigurationManager.AppSettings["forecolor"];
+            if (!string.IsNullOrWhiteSpace(forecolor))
+                generator.QRForeColor = ColorTranslator.FromHtml(forecolor);
+            else
+                generator.QRForeColor = Color.FromKnownColor(KnownColor.Black);
+
+            string backcolor = ConfigurationManager.AppSettings["backcolor"];
+            if (!string.IsNullOrWhiteSpace(backcolor))
+                generator.QRBackColor = ColorTranslator.FromHtml(backcolor);
+            else
+                generator.QRBackColor = Color.FromKnownColor(KnownColor.White);
+
+            string ecclevel = ConfigurationManager.AppSettings["ecclevel"];
+            if (!string.IsNullOrWhiteSpace(ecclevel))
+                generator.ErrorCorrectionLevel = ecclevel[0];
+            else
+                generator.ErrorCorrectionLevel = 'Q';
+
+            string size = ConfigurationManager.AppSettings["size"];
+            if (!string.IsNullOrWhiteSpace(size))
+                generator.ElementSize = Convert.ToInt16(size);
+            else
+                generator.ElementSize = 20;
 
             // GNU Getopt options
             LongOpt[] longopts = new LongOpt[6];
@@ -99,6 +125,7 @@ namespace Casasoft.QRcode
             if (options.Argv.Length > options.Optind)
                 generator.Payload = options.Argv[options.Optind];
 
+            generator.refreshData();
             Application.Run(generator);
         }
     }
