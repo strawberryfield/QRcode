@@ -210,6 +210,7 @@ namespace Casasoft.QRcode
             refreshData();
         }
 
+
         public void refreshData()
         {
             if (qrGenerator == null)
@@ -292,17 +293,19 @@ namespace Casasoft.QRcode
         #endregion
 
         #region save/copy
-        private void btnSave_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Saves the generated bitmap
+        /// </summary>
+        /// <param name="filename">path/file for saving</param>
+        /// <param name="type">1 = jpeg, 2 = bmp, 3 = png, 4 = gif, 5 = tiff, 6 = svg</param>
+        public void Save(string filename, int type)
         {
-            saveFileDialog.ShowDialog();
-            if(saveFileDialog.FileName != "")
+            if(type <= 5)
             {
-                if (saveFileDialog.FilterIndex <= 5)
+                using (FileStream fs = File.Open(filename, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
-
-
-                    FileStream fs = (FileStream)saveFileDialog.OpenFile();
-                    switch (saveFileDialog.FilterIndex)
+                    switch (type)
                     {
                         case 1:
                             pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -324,20 +327,67 @@ namespace Casasoft.QRcode
                             pictureBox1.Image.Save(fs, System.Drawing.Imaging.ImageFormat.Tiff);
                             break;
                     }
-
-                    fs.Close();
                 }
-                else
+            }
+            else
+            {
+                switch (type)
                 {
-                    switch (saveFileDialog.FilterIndex)
-                    {
-                         case 6:
-                            SvgQRCode qrCode = new SvgQRCode(qrCodeData);
-                            string qrCodeAsSvg = qrCode.GetGraphic(20);
-                            File.WriteAllText(saveFileDialog.FileName, qrCodeAsSvg);
-                            break;
-                    }
+                    case 6:
+                        SvgQRCode qrCode = new SvgQRCode(qrCodeData);
+                        string qrCodeAsSvg = qrCode.GetGraphic(ElementSize);
+                        File.WriteAllText(filename, qrCodeAsSvg);
+                        break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Saves the generated bitmap
+        /// the type is taken from the extension
+        /// </summary>
+        /// <param name="filename">file path for saving</param>
+        public void Save(string filename)
+        {
+            string ext = Path.GetExtension(filename).ToLower().Substring(1);
+            int type = 0;
+            switch (ext)
+            {
+                case "jpg":
+                case "jpeg":
+                    type = 1;
+                    break;
+                case "bmp":
+                    type = 2;
+                    break;
+                case "png":
+                    type = 3;
+                    break;
+                case "gif":
+                    type = 4;
+                    break;
+                case "tif":
+                case "tiff":
+                    type = 5;
+                    break;
+                case "svg":
+                    type = 6;
+                    break;
+                default:
+                    break;
+            }
+            if (type > 0)
+                Save(filename, type);
+            else
+                throw new ArgumentException(T.GetString("Unknown file type '{0}'", ext));
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.ShowDialog();
+            if(!string.IsNullOrWhiteSpace(saveFileDialog.FileName))
+            {
+                Save(saveFileDialog.FileName, saveFileDialog.FilterIndex);
             }
         }
 

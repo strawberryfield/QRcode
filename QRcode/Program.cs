@@ -45,7 +45,7 @@ namespace Casasoft.QRcode
             Assembly assembly = Assembly.GetExecutingAssembly();
             string prgName = assembly.GetName().Name;
 
-            // locales management
+            #region locales management
             string localeName = ConfigurationManager.AppSettings["locale"];
             CultureInfo locale;
 
@@ -55,10 +55,12 @@ namespace Casasoft.QRcode
                 locale = new CultureInfo(localeName);
 
             ICatalog T = new Catalog(prgName, "./locale", locale);
+            #endregion
 
             GeneratorForm generator = new GeneratorForm(T);
+            string saveFileName = string.Empty;
 
-            // Options from app.config
+            #region Options from app.config
             string forecolor = ConfigurationManager.AppSettings["forecolor"];
             if (!string.IsNullOrWhiteSpace(forecolor))
                 generator.QRForeColor = ColorTranslator.FromHtml(forecolor);
@@ -82,15 +84,17 @@ namespace Casasoft.QRcode
                 generator.ElementSize = Convert.ToInt16(size);
             else
                 generator.ElementSize = 20;
+            #endregion
 
-            // GNU Getopt options
-            LongOpt[] longopts = new LongOpt[6];
-            longopts[0] = new LongOpt("forecolor", Argument.Required, new StringBuilder(), 'f');
-            longopts[1] = new LongOpt("backcolor", Argument.Required, new StringBuilder(), 'b');
-            longopts[2] = new LongOpt("ecclevel", Argument.Required, new StringBuilder(), 'e');
-            longopts[3] = new LongOpt("size", Argument.Required, new StringBuilder(), 's');
+            #region GNU Getopt options
+            LongOpt[] longopts = new LongOpt[5];
+            longopts[0] = new LongOpt("forecolor", Argument.Required, null, 'f');
+            longopts[1] = new LongOpt("backcolor", Argument.Required, null, 'b');
+            longopts[2] = new LongOpt("ecclevel", Argument.Required, null, 'e');
+            longopts[3] = new LongOpt("size", Argument.Required, null, 's');
+            longopts[4] = new LongOpt("output", Argument.Required, null, 'o');
 
-            Getopt options = new Getopt(prgName, args, "f:b:e:s:", longopts);
+            Getopt options = new Getopt(prgName, args, "f:b:e:s:o:", longopts);
 
             int c;
             while ((c = options.getopt()) != -1)
@@ -118,15 +122,24 @@ namespace Casasoft.QRcode
                     case 'b':
                         generator.QRBackColor = System.Drawing.ColorTranslator.FromHtml(options.Optarg);
                         break;
+
+                    case 'o':
+                        saveFileName = options.Optarg;
+                        break;
                 }
             }
 
             // checks if payload is specified
             if (options.Argv.Length > options.Optind)
                 generator.Payload = options.Argv[options.Optind];
+            #endregion
 
             generator.refreshData();
-            Application.Run(generator);
+
+            if (string.IsNullOrWhiteSpace(saveFileName))
+                Application.Run(generator);
+            else
+                generator.Save(saveFileName);
         }
     }
 }
