@@ -35,6 +35,10 @@
     <ApplicationIcon>QRcode.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EXIFextractor, Version=1.0.6714.27774, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\EXIFextractor.dll</HintPath>
+    </Reference>
     <Reference Include="Gnu.Getopt, Version=0.9.1.0, Culture=neutral, PublicKeyToken=d014b4ccdc53511a, processorArchitecture=MSIL">
       <HintPath>..\packages\Gnu.Getopt.0.9.2\lib\net20\Gnu.Getopt.dll</HintPath>
     </Reference>
@@ -58,6 +62,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="GeneratorForm.cs">
       <SubType>Form</SubType>
     </Compile>

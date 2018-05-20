@@ -21,10 +21,12 @@
 using NGettext;
 using QRCoder;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using static QRCoder.PayloadGenerator;
+using static Casasoft.QRcode.AssemblyInfo;
 
 namespace Casasoft.QRcode
 {
@@ -89,7 +91,9 @@ namespace Casasoft.QRcode
         public GeneratorForm(ICatalog T)
         {
             InitializeComponent();
+            Assembly assembly = Assembly.GetExecutingAssembly();
             this.Text = string.Format("{0} {1}", AssemblyTitle, AssemblyVersion);
+            
             this.T = T;
             translate();
 
@@ -220,36 +224,15 @@ namespace Casasoft.QRcode
             QRCode qrCode = new QRCode(qrCodeData);
             pictureBox1.Image = qrCode.GetGraphic(
                 (int)txtSize.Value, txtForeColor.BackColor, txtBackColor.BackColor, chkBorder.Checked);
+
+            Bitmap bmp = (Bitmap)pictureBox1.Image;
+            Goheer.EXIF.EXIFextractor er = new Goheer.EXIF.EXIFextractor(ref bmp, "\n");
+            er.setTag(0x131, this.Text);        // Software used
+            if (!string.IsNullOrWhiteSpace(textBox.Text))
+                er.setTag(0x10e, textBox.Text);        // Description
         }
 
-        #region Funzioni di accesso attributo assembly
-
-        protected string AssemblyTitle
-        {
-            get
-            {
-                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
-                if (attributes.Length > 0)
-                {
-                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                    if (titleAttribute.Title != "")
-                    {
-                        return titleAttribute.Title;
-                    }
-                }
-                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
-            }
-        }
-
-        protected string AssemblyVersion
-        {
-            get
-            {
-                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            }
-        }
-
-        #endregion
+        
 
         #region colors selectors
         private void btnForeColor_Click(object sender, EventArgs e)
