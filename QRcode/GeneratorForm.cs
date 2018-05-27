@@ -110,7 +110,9 @@ namespace Casasoft.QRcode
                 + "|" + T.GetString("PNG image") + "|*.png"
                 + "|" + T.GetString("GIF image") + "|*.gif"
                 + "|" + T.GetString("TIFF image") + "|*.tif;*.tiff"
-                + "|" + T.GetString("SVG image") + "|*.svg";
+                + "|" + T.GetString("SVG image") + "|*.svg"
+                + "|" + T.GetString("Postscript") + "|*.ps"
+                + "|" + T.GetString("Encapsulated Postscript") + "|*.eps";
 
             qrGenerator = new QRCodeGenerator();
             refreshData();
@@ -317,9 +319,21 @@ namespace Casasoft.QRcode
                 switch (type)
                 {
                     case 6:
-                        SvgQRCode qrCode = new SvgQRCode(qrCodeData);
-                        string qrCodeAsSvg = qrCode.GetGraphic(ElementSize);
+                        SvgQRCode svgQRCode = new SvgQRCode(qrCodeData);
+                        string qrCodeAsSvg = svgQRCode.GetGraphic(ElementSize, QRForeColor, QRBackColor, AddBorder);
                         File.WriteAllText(filename, qrCodeAsSvg);
+                        break;
+
+                    case 7:
+                        PostscriptQRCode psQRCode = new PostscriptQRCode(qrCodeData);
+                        string qrCodeAsPs = psQRCode.GetGraphic(ElementSize, QRForeColor, QRBackColor, AddBorder, false);
+                        File.WriteAllText(filename, qrCodeAsPs);
+                        break;
+
+                    case 8:
+                        PostscriptQRCode epsQRCode = new PostscriptQRCode(qrCodeData);
+                        string qrCodeAsEps = epsQRCode.GetGraphic(ElementSize, QRForeColor, QRBackColor, AddBorder, true);
+                        File.WriteAllText(filename, qrCodeAsEps);
                         break;
                 }
             }
@@ -355,6 +369,12 @@ namespace Casasoft.QRcode
                     break;
                 case "svg":
                     type = 6;
+                    break;
+                case "ps":
+                    type = 7;
+                    break;
+                case "eps":
+                    type = 8;
                     break;
                 default:
                     break;
