@@ -44,7 +44,7 @@
       <HintPath>..\packages\Gnu.Getopt.0.9.2\lib\net20\Gnu.Getopt.dll</HintPath>
     </Reference>
     <Reference Include="NGettext, Version=0.6.1.0, Culture=neutral, PublicKeyToken=08d3d1c89dfd2985, processorArchitecture=MSIL">
-      <HintPath>..\packages\NGettext.0.6.3\lib\net45\NGettext.dll</HintPath>
+      <HintPath>..\packages\NGettext.0.6.7\lib\net46\NGettext.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
